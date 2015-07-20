@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=8;IE=9"/>
+		<title>Test pivotds</title>
+		<script type="text/javascript" src="./../src/pivotds.js"></script>
+		<script type="text/javascript" src="./dataset.json"></script>
+	<body>
+		<script>
+
+var pv = new pivotds.Pivot();
+pv.rows.push("color");
+//pv.cols.push("color")
+pv.aggs.push({key:"price",type:"sum"});
+var res = pv.execute(dataset.fruit);
+console.log(res);
+
+		</script>
+	</body>
+</html>
